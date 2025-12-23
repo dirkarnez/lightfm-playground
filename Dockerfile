@@ -16,9 +16,11 @@
 #     tini \
 #     tzdata
 
-FROM ubuntu:latest
+FROM python:3.11-trixie
 
 ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get upgrade
 
 RUN apt-get update
 
@@ -37,9 +39,7 @@ RUN apt-get -y --no-install-recommends --allow-unauthenticated install \
    libxml2 \
    libxslt-dev \
    wget \
-   bzip2 \
-   gcc \
-   python3
+   bzip2
 
 # # Create a custom user with UID 1234 and GID 1234
 # RUN groupadd -g 1234 customgroup && \
@@ -59,7 +59,8 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+   pip install --no-cache-dir -r requirements.txt
 
 # Print the UID and GID
 CMD echo 'Inside Container:' && \
