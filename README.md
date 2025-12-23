@@ -1,5 +1,7 @@
-docker-compose-playground
-=========================
+lightfm-playground
+==================
+[lyst/lightfm: A Python implementation of LightFM, a hybrid recommendation algorithm.](https://github.com/lyst/lightfm)
+
 ### Notes
 - `sudo chmod -R +x . && ./build.sh` in CI/CD .yaml file is good enough for running docker build on GitHub Action
 
