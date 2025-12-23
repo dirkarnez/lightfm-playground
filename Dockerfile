@@ -59,8 +59,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN pip install --upgrade pip && \
-   pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Print the UID and GID
 CMD echo 'Inside Container:' && \
