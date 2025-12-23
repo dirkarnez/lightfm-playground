@@ -12,13 +12,18 @@
 	// The 'service' property is the name of the service for the container that VS Code should
 	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
 	"service": "python",
-
+	"remoteEnv": {
+		"PYTHONPATH": "${containerWorkspaceFolder}"
+	},
   // this is the working directory inside the docker container
 	"workspaceFolder": "/usr/src/app",
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-python.python"
+				"ms-python.python",
+				"ms-python.debugpy",
+				"ms-vscode-remote.remote-containers",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	}
