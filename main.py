@@ -1,4 +1,5 @@
 # coding=utf-8
+from typing import Any, List
 import numpy as np
 from lightfm import LightFM
 from lightfm.datasets import fetch_movielens
@@ -6,24 +7,28 @@ from lightfm.evaluation import precision_at_k
 
 # Load the MovieLens 100k dataset. Only five
 # star ratings are treated as positive.
-data = fetch_movielens(min_rating=5.0)
+movielens_data = fetch_movielens(min_rating=5.0)
+# movielens_data['item_labels']
+
+# for key, value in movielens_data.items():
+#     print(key, type(value), value.shape)
 
 # Instantiate and train the model
 model = LightFM(loss='warp')
-model.fit(data['train'], epochs=30, num_threads=2)
+model.fit(movielens_data['train'], epochs=30, num_threads=2)
 
 # Evaluate the trained model
-print("Train precision: %.2f" % precision_at_k(model, data['train'], k=5).mean())
-print("Test precision: %.2f" % precision_at_k(model, data['test'], k=5).mean())
+print("Train precision: %.2f" % precision_at_k(model, movielens_data['train'], k=5).mean())
+print("Test precision: %.2f" % precision_at_k(model, movielens_data['test'], k=5).mean())
 
-def sample_recommendation(model, data, user_ids):
-    n_users, n_items = data['train'].shape
+def sample_recommendation(model: LightFM, movielens_data: dict[str, Any], user_ids: List[int]):
+    n_users, n_items = movielens_data['train'].shape
 
     for user_id in user_ids:
-        known_positives = data['item_labels'][data['train'].tocsr()[user_id].indices]
+        known_positives = movielens_data['item_labels'][movielens_data['train'].tocsr()[user_id].indices]
         
         scores = model.predict(user_id, np.arange(n_items))
-        top_items = data['item_labels'][np.argsort(-scores)]
+        top_items = movielens_data['item_labels'][np.argsort(-scores)]
         
         print("User %s" % user_id)
         print("     Known positives:")
@@ -36,4 +41,4 @@ def sample_recommendation(model, data, user_ids):
         for x in top_items[:3]:
             print("        %s" % x)
         
-sample_recommendation(model, data, [3, 25, 450]) 
+sample_recommendation(model, movielens_data, [3, 25, 450]) 
