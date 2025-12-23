@@ -9,12 +9,12 @@
 #     container_name: car_thing_builder
 #     build: .
 services:
-  my-build-container:
+  python:
     build: .
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     volumes:
-      - .:/workspace
+      - .:/usr/src/app
       # - ./build_output:/tmp/build_output
 # volumes:
 #   workspace:

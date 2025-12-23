@@ -1,0 +1,4 @@
+lightfm==1.17
+pytest
+jupyter
+scikit-learn
