@@ -61,8 +61,6 @@ COPY . .
 
 RUN pip install --upgrade pip
 
-RUN pip install --no-cache-dir -r requirements.txt
-
 # Print the UID and GID
 CMD echo 'Inside Container:' && \
    echo 'User: $(whoami) UID: $(id -u) GID: $(id -g)' && \
