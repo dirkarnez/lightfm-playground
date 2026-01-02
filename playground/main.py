@@ -1,15 +1,13 @@
-coding=utf-8
 from typing import Any, List
-from sklearn.utils._openmp_helpers cimport omp_get_max_threads
-max_threads = omp_get_max_threads()
-print("max_threads: %d" % max_threads)
 
 import numpy as np
 from lightfm import LightFM
 from lightfm.datasets import fetch_movielens
 from lightfm.evaluation import precision_at_k
-from .generator.generate import StudentsGenerator
+from playground.generators.generators import StudentsGenerator
 
+
+StudentsGenerator().generate_students()
 # Load the MovieLens 100k dataset. Only five
 # star ratings are treated as positive.
 movielens_data = fetch_movielens(min_rating=5.0)

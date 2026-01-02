@@ -11,6 +11,7 @@ setup(
         "numpy==2.4.0",
         "scipy>=0.17.0", 
         "requests",
-        "scikit-learn"
+        "scikit-learn",
+        "faker==40.1.0"
     ]
 )
