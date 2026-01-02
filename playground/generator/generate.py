@@ -13,3 +13,6 @@ fake.add_provider(medical_professions_provider)
 
 # now you can use:
 fake.medical_profession()
+
+class StudentsGenerator():
+     def generate_students(self):
