@@ -2,6 +2,7 @@ from faker import Faker
 from faker.providers import DynamicProvider
 
 class StudentsGenerator():
+     # [Faculties, Schools and College | The Hong Kong Polytechnic University](https://www.polyu.edu.hk/en/education/faculties-schools-departments/)
      def generate_students(self):
           student_deparment_provider = DynamicProvider(
                provider_name="student_deparment",
@@ -18,9 +19,7 @@ class StudentsGenerator():
                     "Department of Land Surveying and Geo-Informatics"
                ],
           )
-
-
-
+          
           fake = Faker()
 
           # then add new provider to faker instance
