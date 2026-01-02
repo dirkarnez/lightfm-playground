@@ -16,7 +16,7 @@
 #     tini \
 #     tzdata
 
-FROM python:3.11-trixie
+FROM python:3.14-trixie
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -39,8 +39,11 @@ RUN apt-get -y --no-install-recommends --allow-unauthenticated install \
    libxml2 \
    libxslt-dev \
    wget \
-   bzip2
-
+   bzip2 \
+   libomp-dev \
+   gcc \
+   g++ \
+   python3-dev
 # # Create a custom user with UID 1234 and GID 1234
 # RUN groupadd -g 1234 customgroup && \
 #     useradd -m -u 1234 -g customgroup customuser

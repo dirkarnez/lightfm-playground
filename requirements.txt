@@ -1,7 +1,0 @@
-lightfm==1.17
-numpy==2.4.0
-annoy==1.17.3
-# Faker==40.1.0
-# pytest==9.0.2
-# jupyter==1.1.1
-# scikit-learn==1.8.0

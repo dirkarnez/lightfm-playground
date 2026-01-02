@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=80.9.0", "cython", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# "lightfm @ file://{root:uri}/playground/vendor/lightfm"
+[project]
+name = "lightfm-playground"
+version = "1.0.0"
+# dependencies = [
+#   "numpy==2.4.0",
+#   "scipy>=0.17.0", 
+#   "requests",
+#   "scikit-learn",
+#   # "lightfm @ file://../playground/vendor/lightfm"
+# ]
+
+dynamic = ["dependencies"]

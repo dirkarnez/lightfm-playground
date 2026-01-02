@@ -4,6 +4,7 @@ lightfm-playground
 
 ### Notes
 - `sudo chmod -R +x . && ./build.sh` in CI/CD .yaml file is good enough for running docker build on GitHub Action
+- use `pip install git+https://github.com/daviddavo/lightfm`
 
 ### LightFM Tutorials
 - [LightFM tutorial for creating recommendations in Python | Step By Step Data Science](https://www.stepbystepdatascience.com/hybrid-recommender-lightfm-python)

@@ -1,7 +1,11 @@
 # /bin/bash
-# python -m pip install --upgrade pip setuptools wheel
-# python -m pip install --no-use-pep517 lightfm
+python3.14 --version
 
-python3.11 --version # Python 3.11.14
-pip install --no-cache-dir -r requirements.txt
-python3.11 main.py
+python3.14 -m pip install --upgrade pip setuptools wheel
+python3.14 -m pip install build
+python3.14 -m pip install Cython
+# python3.14 -m pip install ./playground/vendor/lightfm
+python3.14 -m pip install -e .
+python3.14 -m build
+python3.14 ./playground/main.py
+
