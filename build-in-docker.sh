@@ -6,6 +6,4 @@ python3.14 --version
 # python3.14 -m pip install .
 
 # python3.14 -m build
-# python3.14 ./playground/main.py
-
 python3.14 -m playground.main
