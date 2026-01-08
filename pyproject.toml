@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=80.9.0", "cython", "wheel"]
+requires = ["setuptools>=80.9.0", "cython>=3.2.4", "wheel>=0.45.1"]
 build-backend = "setuptools.build_meta"
 
 # "lightfm @ file://{root:uri}/playground/vendor/lightfm"

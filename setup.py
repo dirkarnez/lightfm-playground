@@ -9,9 +9,10 @@ setup(
     install_requires=[
         f"lightfm @ {local_path}",
         "numpy==2.4.0",
-        "scipy>=0.17.0", 
-        "requests",
-        "scikit-learn",
-        "faker==40.1.0"
+        "scipy==1.16.3", 
+        "requests==2.32.5",
+        "scikit-learn==1.8.0",
+        "pandas==2.3.3",
+        "unidecode==1.4.0"
     ]
 )
